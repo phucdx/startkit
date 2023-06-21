@@ -1,0 +1,42 @@
+version: '3.5'
+services:
+  psql:
+    image: postgres:15.1-bullseye
+    container_name: startkit-psql
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/PGSQL:/var/lib/postgresql/data/pgdata
+
+  redis:
+    image: redis:7.0.5-alpine
+    container_name: startkit-redis
+    volumes:
+      - ./db/REDIS:/data
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: startkit-mailcatcher
+    ports:
+      - 1080:1080
+
+  app:
+    build: .
+    tty: true
+    stdin_open: true
+    container_name: startkit-app
+    volumes:
+      - .:/rails7-startkit
+    ports:
+      - "3000:3000"
+    environment:
+      POSTGRES_HOST: psql
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: 123456
+    depends_on:
+      - psql
+    command: bash -c "bundle install && rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"

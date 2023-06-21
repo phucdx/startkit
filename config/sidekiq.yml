@@ -1,0 +1,15 @@
+---
+:verbose: true
+
+:concurrency: 1
+
+staging:
+  :concurrency: 2
+
+production:
+  :concurrency: 2
+
+:queues:
+  - critical
+  - default
+  - low
