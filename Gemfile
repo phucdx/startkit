@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -25,11 +27,12 @@ group :development, :test do
   gem "faker", "3.1.0"
   gem "parser", "3.2.1.0"
   gem "rspec-rails", "6.0.1"
+  gem "rubocop-rails", "2.17.4", require: false
 end
 
 group :development do
-  gem "web-console"
   gem "pry", "0.14.2"
+  gem "web-console"
 end
 
 group :test do
