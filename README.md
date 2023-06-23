@@ -64,17 +64,18 @@ Welcome to RAILS 7!
 From the root of the project
 
 ```sh
-docker compose -f docker/docker-compose.yml up -d
+docker compose -f docker-compose.yml up -d
 ```
 
 <details>
   <summary>Output</summary>
 
 ```sh
-[+] Running 3/3
-  ⠿ Container startkit-redis   Running
-  ⠿ Container startkit-psql    Running
-  ⠿ Container startkit-app     Running
+[+] Running 4/4
+ ✔ Container startkit-psql          Started
+ ✔ Container startkit-redis         Started
+ ✔ Container startkit-mailcatcher   Started
+ ✔ Container startkit-app           Started
 ```
 </details>
 
@@ -90,10 +91,11 @@ docker ps --format 'table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Ports}}'
 ```
 
 ```
-NAMES               CONTAINER ID        IMAGE                    PORTS
-startkit-app        93a525316a87        rails7-startkit_app      0.0.0.0:3000->3000/tcp
-startkit-redis      a9b68f61459d        redis:7.0.5-alpine       6379/tcp
-startkit-psql       46ca3f7f0572        postgres:15.1-bullseye   0.0.0.0:5432->5432/tcp
+NAMES                  CONTAINER ID        IMAGE                    PORTS
+startkit-app           1f13e98cdc3b        rails7-startkit_app      0.0.0.0:3000->3000/tcp
+startkit-redis         209a18dfba82        redis:7.0.5-alpine       6379/tcp
+startkit-psql          dde19fa271ed        postgres:15.1-bullseye   0.0.0.0:5432->5432/tcp
+startkit-mailcatcher   d4db8d708a03        schickling/mailcatcher   1025/tcp, 0.0.0.0:1080->1080/tcp
 ```
 </details>
 
@@ -114,7 +116,13 @@ docker exec -it startkit-psql bash
 **Redis**
 
 ```sh
-docker exec -it startkit-psql ash
+docker exec -it startkit-redis ash
+```
+
+**MailCatcher**
+
+```sh
+docker exec -it startkit-mailcatcher ash
 ```
 
 ### To Stop All Containers
@@ -122,16 +130,17 @@ docker exec -it startkit-psql ash
 From the root of the project
 
 ```sh
-docker compose -f docker/docker-compose.yml down
+docker compose -f docker-compose.yml down
 ```
 
 <details>
   <summary>Output</summary>
 
 ```sh
-[+] Running 3/3
-  ⠿ Container rails7app-redis-1   Removed
-  ⠿ Container rails7app-psql-1    Removed
-  ⠿ Container rails7app-rails-1   Removed
+[+] Running 4/4
+ ✔ Container startkit-app           Removed
+ ✔ Container startkit-redis         Removed
+ ✔ Container startkit-mailcatcher   Removed
+ ✔ Container startkit-psql          Removed
 ```
 </details>
