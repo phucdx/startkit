@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
@@ -28,16 +30,12 @@ Rails.application.configure do
     redis_url = "redis://#{redis_host}:#{redis_port}"
 
     puts "Caching uses Redis: #{redis_url}"
-    config.cache_store = :redis_cache_store, {
-      url: redis_url
-    }
+    config.cache_store = :redis_cache_store, { url: redis_url }
 
     # Rails 7. Original setting
     # config.cache_store = :memory_store
 
-    config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
-    }
+    config.public_file_server.headers = { 'Cache-Control': "public, max-age=#{2.days.to_i}" }
   else
     config.action_controller.perform_caching = false
 
@@ -49,10 +47,7 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "mailcatcher",
-    port: 1025
-  }
+  config.action_mailer.smtp_settings = { address: "mailcatcher", port: 1025 }
 
   config.action_mailer.raise_delivery_errors = false
 
