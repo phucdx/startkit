@@ -67,10 +67,16 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.13.0)
+      execjs (~> 2)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    bootstrap (5.3.0.alpha3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.7, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
@@ -129,8 +135,10 @@ GEM
       dry-schema (>= 1.12, < 2)
       zeitwerk (~> 2.6)
     erubi (1.12.0)
+    execjs (2.8.1)
     faker (3.1.0)
       i18n (>= 1.8.11, < 2)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -144,6 +152,10 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery-rails (4.5.1)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
     json (2.6.3)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
@@ -187,6 +199,7 @@ GEM
     parser (3.2.1.0)
       ast (~> 2.4.1)
     pg (1.4.5)
+    popper_js (2.11.7)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -270,6 +283,14 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     sidekiq (7.0.2)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
@@ -291,6 +312,7 @@ GEM
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.2)
+    tilt (2.2.0)
     timeout (0.3.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -316,6 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap (~> 5.3.0.alpha3)
   config
   debug
   devise (= 4.8.1)
@@ -323,6 +346,7 @@ DEPENDENCIES
   faker (= 3.1.0)
   importmap-rails
   jbuilder
+  jquery-rails
   kaminari (= 1.2.2)
   parser (= 3.2.1.0)
   pg (= 1.4.5)
@@ -332,6 +356,7 @@ DEPENDENCIES
   redis (= 5.0.5)
   rspec-rails (= 6.0.1)
   rubocop-rails (= 2.17.4)
+  sassc (~> 2.4)
   sidekiq (= 7.0.2)
   simplecov
   sprockets-rails
