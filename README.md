@@ -36,28 +36,7 @@ On your host you have:
 ### How to start?
 - `git clone git@github.com:phucdx/rails7-startkit.git`
 - `cd rails7-startkit`
-- `bin/setup`
-
-You will see something like that:
-
-```
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Rails 7. StartKit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-What was done:
-1. Pull all required Images
-2. Launching PgSQL Container
-3. Launching Rails Container
-4. Installing Gems. Please Wait
-5. Create DB. Migrate DB. Create Seeds
-6. Launching Redis Container
-7. Run Rails App on the port 3000
-8. Visit: http://localhost:3000
-9. Visit Mail Service: http://localhost:1080
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Welcome to RAILS 7!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-```
+- `docker-compose build`
 
 ### To Run All Containers
 
