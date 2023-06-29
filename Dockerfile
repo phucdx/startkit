@@ -4,7 +4,7 @@ ENV APP_PATH /rails7-startkit
 
 ENV BUNDLE_VERSION 2.3.17
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs vim
+RUN apt-get update -qq && apt-get install -y postgresql-client nodejs vim
 
 RUN gem install bundler --version "$BUNDLE_VERSION"
 
