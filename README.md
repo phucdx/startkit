@@ -19,11 +19,15 @@ Save hours, days or weeks on setting up a typical Rails app.
 
 ## What is under the hood?
 
-- Ruby 3.2
-- Rails 7
+- Ruby 3.0.2
+- Rails 7.0.5
 - PgSQL (Database)
 - Redis (Cache)
 - Sidekiq (Async and Delayed Jobs)
+- Bootstrap 5
+- jQuery
+- Font Awesome 6
+- I18n-js
 
 ### Prerequisites
 
@@ -123,3 +127,9 @@ docker compose -f docker-compose.yml down
  ✔ Container startkit-psql          Removed
 ```
 </details>
+
+### Export i18n-js
+
+```sh
+rake i18n:export
+```

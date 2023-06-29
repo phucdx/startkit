@@ -24,5 +24,9 @@ module Rails7Startkit
     config.active_job.queue_adapter = :sidekiq
 
     config.generators.system_tests = nil
+
+    config.i18n.default_locale = :ja
+
+    config.i18n.available_locales = [:en, :ja]
   end
 end
