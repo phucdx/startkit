@@ -28,6 +28,7 @@ Save hours, days or weeks on setting up a typical Rails app.
 - jQuery
 - Font Awesome 6
 - I18n-js
+- Rubocop
 
 ### Prerequisites
 
