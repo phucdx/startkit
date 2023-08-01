@@ -41,7 +41,9 @@ On your host you have:
 ### How to start?
 - `git clone git@github.com:phucdx/rails7-startkit.git`
 - `cd rails7-startkit`
-- `docker-compose build`
+- `sudo docker-compose build`
+- `sudo chown -R 999:999 ./db/PGSQL`
+- `docker-compose up`
 
 ### To Run All Containers
 
