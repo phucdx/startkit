@@ -33,7 +33,7 @@ services:
     stdin_open: true
     container_name: startkit-app
     volumes:
-      - .:/rails7-startkit
+      - .:/startkit
     ports:
       - "3000:3000"
     environment:

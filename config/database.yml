@@ -8,14 +8,14 @@ default: &default
 
 development:
   <<: *default
-  database: rails7_startkit_development
+  database: startkit_development
 
 test:
   <<: *default
-  database: rails7_startkit_test
+  database: startkit_test
 
 production:
   <<: *default
-  database: rails7_startkit_production
-  username: rails7_startkit_user
-  password: <%= ENV["RAILS7_STARTKIT_PROD_PASSWORD"] %>
+  database: startkit_production
+  username: startkit_user
+  password: <%= ENV["STARTKIT_PROD_PASSWORD"] %>
