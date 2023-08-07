@@ -39,8 +39,8 @@ On your host you have:
 - Git
 
 ### How to start?
-- `git clone git@github.com:phucdx/rails7-startkit.git`
-- `cd rails7-startkit`
+- `git clone git@github.com:phucdx/startkit.git`
+- `cd startkit`
 - `sudo docker-compose build`
 - `sudo chown -R 999:999 ./db/PGSQL`
 - `docker-compose up`
@@ -78,7 +78,7 @@ docker ps --format 'table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Ports}}'
 
 ```
 NAMES                  CONTAINER ID        IMAGE                    PORTS
-startkit-app           1f13e98cdc3b        rails7-startkit_app      0.0.0.0:3000->3000/tcp
+startkit-app           1f13e98cdc3b        startkit_app             0.0.0.0:3000->3000/tcp
 startkit-redis         209a18dfba82        redis:7.0.5-alpine       6379/tcp
 startkit-psql          dde19fa271ed        postgres:15.1-bullseye   0.0.0.0:5432->5432/tcp
 startkit-mailcatcher   d4db8d708a03        schickling/mailcatcher   1025/tcp, 0.0.0.0:1080->1080/tcp

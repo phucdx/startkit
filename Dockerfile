@@ -1,6 +1,6 @@
 FROM ruby:3.0.2
 
-ENV APP_PATH /rails7-startkit
+ENV APP_PATH /startkit
 
 ENV BUNDLE_VERSION 2.3.17
 
