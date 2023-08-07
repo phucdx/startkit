@@ -1,4 +1,4 @@
-FROM ruby:3.0.2
+FROM ruby:3.1.2
 
 ENV APP_PATH /startkit
 
