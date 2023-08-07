@@ -19,7 +19,7 @@ Save hours, days or weeks on setting up a typical Rails app.
 
 ## What is under the hood?
 
-- Ruby 3.0.2
+- Ruby 3.1.2
 - Rails 7.0.5
 - PgSQL (Database)
 - Redis (Cache)
@@ -39,6 +39,7 @@ On your host you have:
 - Git
 
 ### How to start?
+
 - `git clone git@github.com:phucdx/startkit.git`
 - `cd startkit`
 - `sudo docker-compose build`
@@ -63,6 +64,7 @@ docker compose -f docker-compose.yml up -d
  ✔ Container startkit-mailcatcher   Started
  ✔ Container startkit-app           Started
 ```
+
 </details>
 
 ### To See Running Containers
@@ -83,6 +85,7 @@ startkit-redis         209a18dfba82        redis:7.0.5-alpine       6379/tcp
 startkit-psql          dde19fa271ed        postgres:15.1-bullseye   0.0.0.0:5432->5432/tcp
 startkit-mailcatcher   d4db8d708a03        schickling/mailcatcher   1025/tcp, 0.0.0.0:1080->1080/tcp
 ```
+
 </details>
 
 ### To Get In a Container
@@ -129,6 +132,7 @@ docker compose -f docker-compose.yml down
  ✔ Container startkit-mailcatcher   Removed
  ✔ Container startkit-psql          Removed
 ```
+
 </details>
 
 ### Export i18n-js
