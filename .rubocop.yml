@@ -2,8 +2,6 @@ require: rubocop-rails
 AllCops:
   NewCops: enable
   Exclude:
-    - db/PGSQL
-    - db/REDIS
     - db/schema.rb
     - tmp
 Style/FrozenStringLiteralComment:
@@ -23,13 +21,6 @@ Style/StringLiterals:
     - config/environments/development.rb
     - config/environments/production.rb
     - app/mailers/application_mailer.rb
-Naming/FileName:
-  Exclude:
-    - config/_PUMA.rb
-    - config/_SCHEDULE.rb
-    - config/initializers/_CONFIG.rb
-    - config/initializers/_REDIS.rb
-    - config/initializers/_SIDEKIQ.rb
 Style/SymbolArray:
   Exclude:
     - config/initializers/filter_parameter_logging.rb
@@ -48,15 +39,9 @@ Rails/Output:
     - app/jobs/example_job.rb
     - app/models/currency_rate.rb
     - config/environments/development.rb
-    - config/initializers/_CONFIG.rb
-    - config/initializers/_REDIS.rb
-    - config/initializers/_SIDEKIQ.rb
 Metrics/MethodLength:
   Exclude:
     - app/controllers/demo_controller.rb
-Style/GlobalVars:
-  Exclude:
-    - config/initializers/_REDIS.rb
 Metrics/BlockLength:
   AllowedMethods: ['describe', 'context']
   Exclude:

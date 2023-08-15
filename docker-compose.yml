@@ -3,23 +3,19 @@ services:
   psql:
     image: postgres:15.1-bullseye
     container_name: startkit-psql
-    restart: always
-    user: postgres:postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
-      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - 5432:5432
     volumes:
-      - ./db/PGSQL:/var/lib/postgresql/data/pgdata
-    command: postgres -c 'max_connections=200'
+      - ./tmp/db:/var/lib/postgresql/data
 
   redis:
     image: redis:7.0.5-alpine
     container_name: startkit-redis
     volumes:
-      - ./db/REDIS:/data
+      - ./tmp/redis:/data
 
   mailcatcher:
     image: schickling/mailcatcher
