@@ -6,6 +6,8 @@ ENV BUNDLE_VERSION 2.3.17
 
 RUN apt-get update -qq && apt-get install -y postgresql-client && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y nodejs
+
 RUN gem install bundler --version "$BUNDLE_VERSION"
 
 WORKDIR $APP_PATH
